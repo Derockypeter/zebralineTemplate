@@ -130,7 +130,7 @@
         padding: 4%;
         width: 50%;
         margin-top: 2vh;
-        background-color: rgb(115, 167, 52);
+        background-color: var(--primary-color);
         border: 0px solid transparent;
         border-radius: 5%;
         color: white;

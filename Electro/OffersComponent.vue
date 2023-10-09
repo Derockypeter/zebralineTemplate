@@ -38,7 +38,7 @@
         padding: 0.5rem 2.5rem;
         text-transform: uppercase;
         border-radius: 0.4375rem !important;
-        background-color: #fed700;
+        background-color: var(--primary-color);
         border: none;
         font-family: "Open Sans", Helvetica, Arial, sans-serif;
     }

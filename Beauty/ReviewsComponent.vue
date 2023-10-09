@@ -147,7 +147,7 @@
     .cust-btn {
         width: 60%;
         padding: 5%;
-        background-color: rgb(115, 167, 52);
+        background-color: var(--primary-color);
         border: 0px solid transparent;
         color: white;
         margin-right: 20vw;

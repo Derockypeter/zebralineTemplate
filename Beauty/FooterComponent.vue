@@ -2,11 +2,12 @@
     <div>
         <div class="footer">
             <div class="footer-img">
-                <img
+                <!-- <img
                     src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2019/07/organic-store-white-logo.png"
                     alt="img"
                     class="img-footer"
-                />
+                /> -->
+                {{ brandname }}
                 <p class="footer-text">
                     Maecenas mi justo, interdum at consectetur vel,
                     <br />tristique et arcu. Ut quis eros blandit, ultrices diam
@@ -45,7 +46,7 @@
 
         <div class="footer-two">
             <div class="foot-two-text">
-                <p class="footer-copy">Copyright © 2023 | Organic Store</p>
+                <p class="footer-copy">Copyright © 2023 | {{ brandname }}</p>
             </div>
             <div class="footer-socials">
                 <i class="fa-brands fa-facebook"></i>

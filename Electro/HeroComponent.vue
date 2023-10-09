@@ -1,6 +1,6 @@
 <template>
     <div class="mt-10" @click="showHeroEditor">
-        <div class="carousel carousel-slider" id="promo" v-for="promo, index in heroSeeder" :key="index">
+        <div class="carousel carousel-slider" :id="index" v-for="promo, index in heroSeeder" :key="index">
             <div class="carousel-item" href="#one!" id="one">
                 <div class="overlay"></div>
                 <div class="container carouselContainer">
@@ -203,7 +203,7 @@
                 flex-direction: column;
             } */
     .carousel .indicators .indicator-item.active {
-        background-color: #fed700 !important;
+        background-color: var(--primary-color) !important;
         width: 5vh !important;
         border-radius: 5px;
     }
@@ -215,7 +215,7 @@
         background-color: #bcbcbc !important;
     }
     .tabs .indicator {
-        background-color: #fed700 !important;
+        background-color: var(--primary-color) !important;
     }
     @media only screen and (min-width: 1024px) {
         .carousel .indicators {
@@ -302,7 +302,7 @@
     }
     .startNowBtn {
         padding: 20px 35px;
-        background-color: #fed700;
+        background-color: var(--primary-color);
         font-family: "Poppins", sans-serif;
         font-size: 1.00012rem;
         border-radius: 5px;

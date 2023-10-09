@@ -14,11 +14,11 @@
                             Vestibulum mattis ligula a commodo semper
                         </p>
                         <div class="ratings">
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
                         </div>
                     </div>
                 </div>
@@ -34,11 +34,11 @@
                             Vestibulum mattis ligula a commodo semper
                         </p>
                         <div class="ratings">
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
                         </div>
                     </div>
                 </div>
@@ -54,11 +54,11 @@
                             Vestibulum mattis ligula a commodo semper
                         </p>
                         <div class="ratings">
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
-                            <i class="fa-solid fa-star" style="color: #ffc007"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
+                            <i class="fa-solid fa-star" style="color: var(--primary-color)"></i>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@ content: ' ';
 height: 2px;
 width: 114px;
 display: block;
-background-color: #fed700;
+background-color: var(--primary-color);
 position: absolute;
 bottom: -1px;
 left: 0;

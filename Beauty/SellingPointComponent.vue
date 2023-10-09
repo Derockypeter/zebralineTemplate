@@ -73,7 +73,7 @@
     .text-point {
         margin-left: 2vw;
         font-size: 150%;
-        color: rgb(115, 167, 52);
+        color: rgb(115, 167, 52)var(--primary-color);
     }
 
     .point-icon {

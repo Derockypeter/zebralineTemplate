@@ -202,6 +202,13 @@
         margin-right: 0%;
     }
 
+    .flex {
+        display: flex;
+    }
+
+    .relative {
+        position: relative;
+    }
     .nav {
         align-items: center;
         background-color: white;
@@ -222,7 +229,7 @@
     }
 
     ul li a:hover {
-        color: rgb(140, 194, 74);
+        color: var(--primary-color);
         font-size: 110%;
         font-weight: 100%;
         background-color: white;
@@ -251,13 +258,13 @@
     }
 
     .numbers {
-        color: rgb(140, 194, 74);
+        color: var(--primary-color);
         font-size: large;
         margin-right: 1vw;
     }
 
     .span {
-        color: rgb(140, 194, 74);
+        color: var(--primary-color);
     }
 
     .cart {
@@ -268,7 +275,7 @@
 
     .num {
         border-radius: 100%;
-        background-color: rgb(140, 194, 74);
+        background-color: var(--primary-color);
         color: white;
         position: absolute;
         align-items: center;

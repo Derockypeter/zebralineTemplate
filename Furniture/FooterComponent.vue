@@ -169,7 +169,7 @@
         <div class="bg-grey">
             <div class="container">
                 <div class="flex gap-2">
-                    <p>© Electro</p>
+                    <p>© {{ brandname }}</p>
                     - <span>Powered by Zebraline</span>
                 </div>
             </div>
@@ -202,7 +202,7 @@
         font-weight: 400;
     }
     .fa-headset {
-        color: #fed700;
+        color: var(--primary-color);
         font-size: 3rem;
     }
     .btnSocial {
@@ -280,7 +280,7 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #fed700; /* Adjust the button's background color */
+        background-color: var(--primary-color); /* Adjust the button's background color */
         color: #fff; /* Button text color */
         border: none;
         border-radius: 50%;

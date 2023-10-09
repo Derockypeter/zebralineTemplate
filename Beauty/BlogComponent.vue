@@ -86,13 +86,14 @@
         margin-bottom: 4vh;
     }
     button.btn {
-        background-color: rgb(115, 167, 52);
+        background-color: var(--primary-color);
         box-shadow: none;
         color: #fff;
     }
     button.btn:hover {
         background-color: #fff;
-        border: 1px solid #333e48;
+        border: 1px solid var(--primary-color);
+        color: var(--primary-color);
     }
 </style>
 <script>

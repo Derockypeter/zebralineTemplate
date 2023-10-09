@@ -2,7 +2,7 @@
     <div class="grey lighten-3">
         <div class="container">
             <div class="row" @click="showProductEditor">
-                <div class="col s12">
+                <!-- <div class="col s12">
                     <ul class="tabs">
                         <li class="tab col s3">
                             <a href="#test1 active">Best Deals</a>
@@ -11,7 +11,7 @@
                             <a class="" href="#test2">TV & Video</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <div id="test1" class="col s12">
                     <div class="row">
                         <div
@@ -24,14 +24,14 @@
                                     <span class="categoryText">Speakers</span>
 
                                     <router-link :to="{ name: 'product-details', params: { product_name: product.title } }" class="blue-text">
-                                        {{ product.title }}
+                                        {{ product.title.slice(0, 6) }}
                                     </router-link>
                                     <img
                                         :src="product.images[0].url"
                                         class="responsive-img"
                                     />
                                     <div class="flex justify-between">
-                                        <p class="amount">${{ product.curPrice }}</p>
+                                        <p class="amount">{{ product.curPrice }}</p>
                                         <div class="hide-on-med-and-down">
                                             <a href="" class="cartContener"
                                                 ><i
@@ -111,6 +111,7 @@
     .categoryText {
         font-size: 0.74987rem;
         color: #878787 !important;
+        display: block;
     }
     .cartContener {
         width: 4vh;
@@ -118,7 +119,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #fed700;
+        background-color: var(--primary-color);
         border-radius: 100%;
         color: #fff;
     }
@@ -150,7 +151,7 @@
             return {
                 seededProducts: [
                     {
-                        title: "Yellow Shoes",
+                        title: "Bulbs",
                         category: {
                             name: "Men",
                         },
@@ -166,7 +167,7 @@
                         link: "#",
                     },
                     {
-                        title: "Dark Blue Jeans",
+                        title: "Apple Pad",
                         category: {
                             name: "Men",
                         },
@@ -174,97 +175,97 @@
                         rating: 2,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans1-768x768.jpg",
+                                url: "https://transvelo.github.io/electro-html/2.0/assets/img/190X150/img4.png",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Blue Denim Jeans",
+                        title: "Purple 2 Solo Wireless",
                         category: {
-                            name: "Men",
+                            name: "Speakers",
                         },
                         curPrice: "$150.00",
                         rating: 3,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans2-768x768.jpg",
+                                url: "https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img3.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Blue Denim Short",
+                        title: "Iphone 14 pro",
                         category: {
-                            name: "Men",
+                            name: "Speakers",
                         },
                         curPrice: "$130.00",
                         rating: 4,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-768x768.jpg",
+                                url: "https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img4.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Anchor Bracelet",
+                        title: "Sony Camera",
                         category: {
-                            name: "Men",
+                            name: "Camera",
                         },
                         curPrice: "$120.00",
                         rating: 5,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory2-768x768.jpg",
+                                url: "	https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img5.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Boho Bangle Bracelet",
+                        title: "Hp Laserjet",
                         category: {
-                            name: "Men",
+                            name: "Printers",
                         },
                         curPrice: "$120.00",
                         rating: 4,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory1-768x768.jpg",
+                                url: "https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img6.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Yellow Shoes",
+                        title: "PSP 5",
                         category: {
-                            name: "Men",
+                            name: "Games",
                         },
                         curPrice: "$120.00",
                         rating: 2,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag1-768x768.jpg",
+                                url: "	https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img7.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Bright Red",
+                        title: "Sony IPS Camera",
                         category: {
-                            name: "Men",
+                            name: "Camera",
                         },
                         curPrice: "$120.00",
                         rating: 3,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag3-768x768.jpg",
+                                url: "https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img8.jpg",
                             },
                         ],
 

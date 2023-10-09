@@ -145,7 +145,7 @@
     .divider {
         width: 10%;
         margin: 3vh 0;
-        background: #fbd84b;
+        background: var(--primary-color);
         height: 2px;
     }
     .desc {
@@ -165,7 +165,7 @@
         padding: 0px 0px 4px 0px;
         display: inline-flex;
         color: #26222F;
-        border-color: #fbd84b;
+        border-color: var(--primary-color);
         gap: 2vh;
     }
     .learnmore svg {

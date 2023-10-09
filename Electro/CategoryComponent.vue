@@ -3,7 +3,7 @@
         <div class="container mt-3">
             <div class="row">
                 <div v-if="categories && categories.length > 0">
-                    <div class="col s12 l3 m6 md-mt-3" :class="{'sm-mt-3 md-mt-3': index === 1, 'sm-mt-3': index === 1}"  v-for="(category, index) in categories.slice(0, 3)" :key="index">
+                    <div class="col s12 l3 m6 md-mt-3" :class="{'sm-mt-3 md-mt-3': index === 1, 'sm-mt-3': index === 2}"  v-for="(category, index) in categories.slice(0, 4)" :key="index">
                         <div class="bgGrey">
                             <a href="">
                                 <div class="flex gap-2">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div v-else>
-                    <div class="col s12 l3 m6 md-mt-3" :class="{'sm-mt-3 md-mt-3': index === 1, 'sm-mt-3': index === 1}"  v-for="(category, index) in seeder.slice(0, 3)" :key="index">
+                    <div class="col s12 l3 m6 md-mt-3" :class="{'sm-mt-3 md-mt-3': index === 1, 'sm-mt-3': index === 2}"  v-for="(category, index) in seeder.slice(0, 4)" :key="index">
                         <div class="bgGrey">
                             <a href="">
                                 <div class="flex gap-2">
@@ -74,22 +74,28 @@
             return {
                 seeder: [
                     {
-                        name: "Women Fashion",
+                        name: "Camera",
                         description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
-                        image: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/women-fashion-free-img.jpg",
+                        image: "https://transvelo.github.io/electro-html/2.0/assets/img/190X150/img1.png",
                     },
                     {
-                        name: "Men Fashion",
+                        name: "TV Sets",
                         description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
-                        image: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/men-fashion-free-img.jpg",
+                        image: "https://transvelo.github.io/electro-html/2.0/assets/img/190X150/img2.jpg",
                     },
                     {
-                        name: "Accessories",
+                        name: "Computers",
                         description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
-                        image: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/footwear-free-img.jpg",
+                        image: "https://transvelo.github.io/electro-html/2.0/assets/img/190X150/img3.jpg",
+                    },
+                    {
+                        name: "Cameras",
+                        description:
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
+                        image: "https://transvelo.github.io/electro-html/2.0/assets/img/190X150/img4.png",
                     },
                 ],
             };
@@ -145,7 +151,7 @@
     }
     .chevyRight {
         display: inline-block;
-        background-color: #fed700;
+        background-color: var(--primary-color);
         width: 1.5vh;
         height: 1.5vh;
         display: flex;

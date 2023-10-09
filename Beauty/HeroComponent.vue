@@ -12,7 +12,7 @@
             <div class="hero-text">
                 <h6 class="hero-text-one">{{ heroSeeder[index].others }}</h6>
                 <h2 class="hero-description">
-                    {{ heroSeeder[0].description }}
+                    {{ heroSeeder[index].description }}
                 </h2>
                 <p class="hero-description-text">.</p>
                 <button class="hero-btn">
@@ -159,7 +159,7 @@
         padding: 4%;
         width: 60%;
         border: 0px transparent;
-        background-color: rgb(115, 167, 52);
+        background-color: var(--primary-color);
         border-radius: 5%;
         color: white;
         margin-top: 5%;

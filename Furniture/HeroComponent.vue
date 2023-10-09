@@ -75,7 +75,7 @@
     .divider {
         width: 10%;
         margin: 3vh 0;
-        background: #fbd84b;
+        background: var(--primary-color);
         z-index: 1;
     }
     .desc {

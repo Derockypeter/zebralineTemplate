@@ -56,7 +56,7 @@
     margin-bottom: 4vh;
 }
     button.btn {
-        background-color: #fed700;
+        background-color: var(--primary-color);
         box-shadow: none;
         color: #333e48;
     }
@@ -78,7 +78,7 @@
     height: 2px;
     width: 114px;
     display: block;
-    background-color: #fed700;
+    background-color: var(--primary-color);
     position: absolute;
     bottom: -1px;
     left: 0;

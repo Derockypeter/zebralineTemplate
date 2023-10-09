@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavbarComponent />
+    <NavbarComponent :categories="categories"/>
     <HeroComponent />
     <CategoryComponent />
     <FeaturedProductsComponent />
@@ -12,11 +12,11 @@
 </template>
 <script>
     import M from 'materialize-css'
-    // import NavbarComponent from '../../../Electro/NavbarComponent.vue'
     // import M from 'materialize-css'
+    // import NavbarComponent from '../../../Electro/NavbarComponent.vue'
     // import HeroComponent from '../../../Electro/HeroComponent.vue'
-    // import FeaturedProductsComponent from '../../../Electro/FeaturedProductsComponent.vue'
     // import CategoryComponent from '../../../Electro/CategoryComponent.vue'
+    // import FeaturedProductsComponent from '../../../Electro/FeaturedProductsComponent.vue'
     // import OffersComponent from '../../../Electro/OffersComponent.vue'
     // import FooterComponent from '../../../Electro/FooterComponent.vue'
     // import BlogComponent from '../../../Electro/BlogComponent.vue'
@@ -49,6 +49,11 @@
         OffersComponent,
         ReviewsComponent,
         FooterComponent,
+      },
+      data(){
+        return {
+          categories: [],
+        }
       },
       mounted() {
         M.AutoInit()

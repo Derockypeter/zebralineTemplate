@@ -24,7 +24,7 @@
                                 name: 'product-details',
                                 params: { product_name: product.title },
                             }"
-                            class="img-title"
+                            class="img-title cursor"
                             >{{ product.title }}</router-link
                         >
                     </h4>
@@ -35,7 +35,7 @@
                         <i class="fa-regular fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
-                    <p class="price">${{ product.curPrice }}</p>
+                    <p class="price">{{ product.curPrice }}</p>
                 </div>
             </div>
         </div>
@@ -84,6 +84,12 @@
         margin-top: 4vw;
         font-size: 200%;
         font-family: "Merriweather", serif;
+    }
+    .cursor {
+        cursor: pointer;
+    }
+    .cursor:hover {
+        color: var(--primary-color);
     }
     @media only screen and (min-width: 1024px) {
         .container {

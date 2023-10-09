@@ -126,8 +126,8 @@
         padding-left: 31px;
         font-weight: 600;
         line-height: 1em;
-        border-color: #fbd84b;
-        background-color: #fbd84b;
+        border-color: var(--primary-color);
+        background-color: var(--primary-color);
         position: relative;
         z-index: 1;
         color: #26222f;
@@ -137,6 +137,9 @@
         fill: #26222f;
         width: 1em;
         height: auto;
+    }
+    button:focus {
+        background: var(--primary-color);
     }
     @media only screen and (min-width: 768px) and (max-width: 1023px) {
         .adText {
