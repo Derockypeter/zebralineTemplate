@@ -1,25 +1,30 @@
 <template>
-    <div class="container">
+    <div class="container" @click="showHeroEditor">
         <div class="hero">
             <div class="hero-img">
-                <img src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2021/03/organic-products-hero.png" alt="image" class="hero-image">
+                <img
+                    :src="imageUrlWithTimestamp"
+                    alt="image"
+                    class="hero-image"
+                />
             </div>
 
-
             <div class="hero-text">
-                <h6 class="hero-text-one">Best Quality Products</h6>
-                <h2 class="hero-description">Join The Organic <br> Movement!</h2>
-                <p class="hero-description-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                    tellus,
-                    luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                <button class="hero-btn"><i class="fa-solid fa-cart-shopping btn-hero"></i>SHOP NOW</button>
+                <h6 class="hero-text-one">{{ heroSeeder[index].others }}</h6>
+                <h2 class="hero-description">
+                    {{ heroSeeder[0].description }}
+                </h2>
+                <p class="hero-description-text">.</p>
+                <button class="hero-btn">
+                    <i class="fa-solid fa-cart-shopping btn-hero"></i>SHOP NOW
+                </button>
             </div>
         </div>
     </div>
 </template>
 <script>
     export default {
-        computed:{
+        computed: {
             imageUrlWithTimestamp() {
                 // Append the timestamp as a query parameter to the image URL
                 return `${this.heroSeeder[this.index].image}?t=${this.timestamp}`;
@@ -30,9 +35,10 @@
                 index: 0,
                 heroSeeder: [
                     {
-                        description: "The new Standard",
-                        image: "https://transvelo.github.io/electro-html/2.0/assets/img/416X420/img1.png",
-                        others: "Under favorable smartwatches",
+                        description:
+                            "Join The Organic. Movement!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo",
+                        image: "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2021/03/organic-products-hero.png",
+                        others: "Best Quality Products",
                     },
                     {
                         description: "The new Standard",
@@ -92,14 +98,14 @@
             },
             showHeroEditor() {
                 if (this.loggedIn) {
-                    this.$emit('showHeroEditor', true);
+                    this.$emit("showHeroEditor", true);
                 }
-            }
+            },
         },
         props: {
             loggedIn: Boolean,
             hero: Object,
-            timestamp: Number
+            timestamp: Number,
         },
         watch: {
             hero(newVal, oldVal) {
@@ -109,8 +115,8 @@
                     // this.heroSeeder.image = newVal.image ?? this.heroSeeder.image;
                     // this.heroSeeder.others = newVal.others ?? this.heroSeeder.others;
                 }
-            }
-        }
+            },
+        },
     };
 </script>
 <style scoped>
@@ -123,20 +129,17 @@
         gap: 12%;
         align-items: center;
         padding-top: 4vw;
-        font-family: 'Merriweather', serif;
-
+        font-family: "Merriweather", serif;
     }
 
     .container {
         margin-left: 2%;
         margin-right: 2%;
-        font-family: 'Merriweather', serif;
-       
+        font-family: "Merriweather", serif;
     }
 
     .hero-text-one {
         font-weight: 800;
-
     }
 
     .hero-description {
@@ -147,7 +150,7 @@
 
     .hero-description-text {
         font-size: 200;
-        font-weight:100;
+        font-weight: 100;
         width: 200%;
         color: rgb(120, 119, 119);
     }
@@ -171,20 +174,16 @@
             font-weight: 200;
             align-items: center;
             color: brown;
+        }
 
-    }
+        .hero-img {
+            width: 20%;
+        }
 
-    .hero-img {
-        width: 20%;
-    }
-
-    .container {
-        margin: 0%;
-        font-family: 'Merriweather', serif;
-       
-    }
-
-    
+        .container {
+            margin: 0%;
+            font-family: "Merriweather", serif;
+        }
     }
 
     @media only screen and (min-width: 1024px) {

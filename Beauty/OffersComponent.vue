@@ -1,5 +1,5 @@
 <template>
-    <div class="offer">
+    <div class="offer" @click="showHeroEditor">
         <h6 class="offer-text">Get 25% Off On Your First Purchase!</h6>
         <button class="offer-btn">
             <i class="fa-solid fa-cart-shopping offer-shop"></i>
@@ -7,6 +7,25 @@
         </button>
     </div>
 </template>
+<script>
+    export default {
+        mounted() {
+            // Initialize Materialize components
+            M.AutoInit();
+        },
+        methods: {
+            showHeroEditor() {
+                if (this.loggedIn) {
+                    this.$emit("showHeroEditor", true);
+                }
+            },
+        },
+        props: {
+            loggedIn: Boolean,
+            hero: Object,
+        },
+    };
+</script>
 <style scoped>
     /* Offer Section Styling */
 

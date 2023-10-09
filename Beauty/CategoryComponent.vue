@@ -1,26 +1,21 @@
 <template>
      <div class="row row-prod">
-        <div class="col s4">
-            <div class="card feat-prod">
-                <h6 class="feat-descrip">Farm Fresh Fruits</h6>
-                <p class="feat-text">Ut sollicitudin quam vel purus tempus, vel eleifend felis varius.</p>
-                <button class="card-btn">SHOP NOW<i class="fa-solid fa-arrow-right feat-arrow"></i></button>
+        <div v-if="categories && categories.length > 0">
+            <div class="col s12 l4 m4" v-for="(category, index) in categories.slice(0, 3)"  :key="index">
+                <div class="card feat-prod">
+                    <h6 class="feat-descrip">{{ category.name }}</h6>
+                    <p class="feat-text">{{ !category.image ? seeder[index].description : category.description }}</p>
+                    <router-link :to="{ name: 'product-search-category', params: { category_name: category.name ?? 'category' }, query: { additionalData: category.id ?? 'category_id' } }" class="card-btn">SHOP NOW<i class="fa-solid fa-arrow-right feat-arrow"></i></router-link>
+                </div>
             </div>
         </div>
-
-        <div class="col s4">
-            <div class="card feat-prods">
-                <h6 class="feat-descrip">Fresh Vegetables</h6>
-                <p class="feat-text">Aliquam porta justo nibh, id laoreet sapien sodales vitae justo.</p>
-                <button class="card-btn">SHOP NOW<i class="fa-solid fa-arrow-right feat-arrow"></i></button>
-            </div>
-        </div>
-
-        <div class="col s4">
-            <div class="card feat-product">
-                <h6 class="feat-descrip">Organic Legume</h6>
-                <p class="feat-text">Phasellus sed urna mattis, viverra libero sed, aliquam est.</p>
-                <button class="card-btn">SHOP NOW<i class="fa-solid fa-arrow-right feat-arrow"></i></button>
+        <div v-else>
+            <div class="col s12 l4 m4" v-for="(category, index) in seeder.slice(0, 3)"  :key="index">
+                <div class="card feat-prod">
+                    <h6 class="feat-descrip">{{ category.name }}</h6>
+                    <p class="feat-text">{{ !category.image ? seeder[index].description : category.description }}</p>
+                    <router-link :to="{ name: 'product-search-category', params: { category_name: category.name ?? 'category' }, query: { additionalData: category.id ?? 'category_id' } }" class="card-btn">SHOP NOW<i class="fa-solid fa-arrow-right feat-arrow"></i></router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -31,21 +26,21 @@
             return {
                 seeder: [
                     {
-                        name: "Women Fashion",
+                        name: "Farm Fresh Products",
                         description:
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
+                            "Aliquam porta justo nibh, id laoreet sapien sodales vitae justo.",
                         image: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/women-fashion-free-img.jpg",
                     },
                     {
-                        name: "Men Fashion",
+                        name: "Fresh Vegetables",
                         description:
                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
                         image: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/men-fashion-free-img.jpg",
                     },
                     {
-                        name: "Accessories",
+                        name: "Organic Legume",
                         description:
-                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac dictum.",
+                            "Phasellus sed urna mattis, viverra libero sed, aliquam est.",
                         image: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2018/12/footwear-free-img.jpg",
                     },
                 ],

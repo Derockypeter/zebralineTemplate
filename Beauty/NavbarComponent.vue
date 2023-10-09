@@ -2,35 +2,118 @@
     <div>
         <nav class="nav">
             <div class="nav-wrapper">
-                <a href="#" class="brand-logo"
-                    ><img
+                <a :href="loggedIn ? `#!` : `/`" class="brand-logo">
+                    <!-- <img
                         src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2019/06/organic-store-logo5.svg"
                         alt="logo"
                         class="logo"
-                /></a>
+                /> -->
+                    {{ brandname }}
+                </a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"
                     ><i class="material-icons">menu</i></a
                 >
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
-                    <li><a href="sass.html">Everything</a></li>
-                    <li><a href="badges.html">Groceries</a></li>
-                    <li><a href="collapsible.html">Juice</a></li>
+                    <span v-show="categories.length < 3">
+                        <li
+                            v-for="category in categories"
+                            :key="category.id"
+                            @click="showCategoryEditEditor"
+                        >
+                            <router-link
+                                :to="
+                                    loggedIn
+                                        ? `#!`
+                                        : {
+                                              name: `product-search-category`,
+                                              params: {
+                                                  category_name:
+                                                      category.name ??
+                                                      `category`,
+                                              },
+                                              query: {
+                                                  additionalData:
+                                                      category.id ??
+                                                      `category_id`,
+                                              },
+                                          }
+                                "
+                                >{{ category.name }}</router-link
+                            >
+                        </li>
+                    </span>
+                    <li v-show="categories.length > 3">
+                        <a
+                            class="dropdown-trigger"
+                            href="#"
+                            data-target="dropdownCategory"
+                            >Categories</a
+                        >
+                    </li>
+                    <ul id="dropdownCategory" class="dropdown-content">
+                        <li
+                            v-for="category in categories"
+                            :key="category.id"
+                            @click="showCategoryEditEditor"
+                        >
+                            <router-link
+                                :to="
+                                    loggedIn
+                                        ? '#!'
+                                        : {
+                                              name: 'product-search-category',
+                                              params: {
+                                                  category_name:
+                                                      category.name ??
+                                                      'category',
+                                              },
+                                              query: {
+                                                  additionalData:
+                                                      category.id ??
+                                                      'category_id',
+                                              },
+                                          }
+                                "
+                                >{{ category.name }}</router-link
+                            >
+                        </li>
+                    </ul>
                 </ul>
 
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html" class="links-right">About</a></li>
                     <li>
-                        <a href="badges.html" class="links-right">Contact</a>
+                        <a href="#" class="links-right">Blog</a>
                     </li>
                     <li>
-                        <div class="span relative">
+                        <a :href="mailUs" class="links-right">Contact Us</a>
+                    </li>
+                    <li>
+                        <router-link
+                            :to="{ name: `Cart` }"
+                            class="span relative"
+                        >
                             <span class="numbers">$0.00</span>
                             <i class="fa-solid fa-cart-shopping cart"></i>
-                            <span class="num">0</span>
-                        </div>
+                            <span class="num">{{ cartCount }}</span>
+                        </router-link>
                     </li>
                     <li>
-                        <i class="fa-solid fa-user user"></i>
+                        <a
+                            href="/auth/signin"
+                            class="user"
+                            v-if="!isAuthenticated"
+                            >LOGIN/REGISTER</a
+                        >
+                        <a
+                            v-else
+                            :href="
+                                role == `Admin`
+                                    ? `/vendor/dashboard`
+                                    : `/your_account/dashboard`
+                            "
+                            class="user"
+                            >{{ names }}</a
+                        >
                     </li>
                 </ul>
             </div>
@@ -39,10 +122,10 @@
     </div>
 </template>
 <script>
-    // import apiMixin from "../../mixin/apiMixin";
-    // import { useCartStore } from "../../../store";
+    import apiMixin from "../../mixin/apiMixin";
+    import { useCartStore } from "../../../store";
     export default {
-        // mixins: [apiMixin],
+        mixins: [apiMixin],
         data() {
             return {
                 isOpen: false,
@@ -57,26 +140,26 @@
         },
         computed: {
             isAuthenticated() {
-                // const cartStore = useCartStore();
-                // return cartStore.isAuthenticated;
+                const cartStore = useCartStore();
+                return cartStore.isAuthenticated;
             },
             names() {
-                // const cartStore = useCartStore();
-                // const names = cartStore.user.names;
+                const cartStore = useCartStore();
+                const names = cartStore.user.names;
                 const nameParts = names.split(" ");
                 return nameParts[0];
             },
             role() {
-                // const cartStore = useCartStore();
-                // const role = cartStore.user.role;
+                const cartStore = useCartStore();
+                const role = cartStore.user.role;
                 return role;
             },
             cartCount() {
-                // const cartStore = useCartStore();
-                // return cartStore.cartCount;
+                const cartStore = useCartStore();
+                return cartStore.cartCount;
             },
             wishlistCount() {
-                // return useCartStore().wishlistItemCount;
+                return useCartStore().wishlistItemCount;
             },
             mailUs() {
                 return (
@@ -100,9 +183,6 @@
                 if (this.loggedIn) {
                     this.$emit("showEditNavMenu", true);
                 }
-            },
-            toggleCollapsible() {
-                this.isOpen = !this.isOpen; // Toggle the isOpen state
             },
         },
         props: {

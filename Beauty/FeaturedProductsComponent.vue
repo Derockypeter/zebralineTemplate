@@ -3,18 +3,31 @@
         <h6 class="title">Best Selling Products</h6>
 
         <div class="row rows">
-            <div class="col s3 prod-all">
+            <div
+                class="col s3 prod-all"
+                v-for="(product, index) in seededProducts"
+                :key="index"
+            >
                 <div class="selling-images">
                     <img
-                        src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/coffee-asorted-600x600.jpg"
+                        :src="product.images[0].url"
                         alt="images"
                         class="prod-img responsive-img"
                     />
                 </div>
 
                 <div class="image-description">
-                    <p class="img-title">Groceries</p>
-                    <h4 class="img-main">Assorted Coffee</h4>
+                    <p>{{ product.category.name }}</p>
+                    <h4 class="img-main">
+                        <router-link
+                            :to="{
+                                name: 'product-details',
+                                params: { product_name: product.title },
+                            }"
+                            class="img-title"
+                            >{{ product.title }}</router-link
+                        >
+                    </h4>
                     <div class="rating">
                         <i class="fa-regular fa-star"></i>
                         <i class="fa-regular fa-star"></i>
@@ -22,84 +35,13 @@
                         <i class="fa-regular fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
-                    <p class="price">$35.00</p>
-                </div>
-            </div>
-
-            <div class="col s3 prod-all">
-                <div class="selling-images">
-                    <img
-                        src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/sanitizer-600x600.jpg"
-                        alt="images"
-                        class="prod-img"
-                    />
-                </div>
-
-                <div class="image-description">
-                    <p class="img-title">Groceries</p>
-                    <h4 class="img-main">Assorted Coffee</h4>
-                    <div class="rating">
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p class="price">$35.00</p>
-                </div>
-            </div>
-
-            <div class="col s3 prod-all">
-                <div class="selling-images">
-                    <img
-                        src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies-600x600.jpg"
-                        alt="images"
-                        class="prod-img"
-                    />
-                </div>
-
-                <div class="image-description">
-                    <p class="img-title">Groceries</p>
-                    <h4 class="img-main">Assorted Coffee</h4>
-                    <div class="rating">
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p class="price">$35.00</p>
-                </div>
-            </div>
-
-            <div class="col s3 prod-all">
-                <div class="selling-images">
-                    <img
-                        src="https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil-600x600.jpg"
-                        alt="images"
-                        class="prod-img"
-                    />
-                </div>
-
-                <div class="image-description">
-                    <p class="img-title">Groceries</p>
-                    <h4 class="img-main">Assorted Coffee</h4>
-                    <div class="rating">
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                    <p class="price">$35.00</p>
+                    <p class="price">${{ product.curPrice }}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <style scoped>
-   
-
     /* Best Selling Section */
 
     .prod-img {
@@ -125,7 +67,7 @@
         margin: 1vh;
         font-size: 100%;
         font-weight: 600;
-        font-family: 'Merriweather', serif;
+        font-family: "Merriweather", serif;
     }
 
     .rating {
@@ -141,7 +83,7 @@
         text-align: center;
         margin-top: 4vw;
         font-size: 200%;
-        font-family: 'Merriweather', serif;
+        font-family: "Merriweather", serif;
     }
     @media only screen and (min-width: 1024px) {
         .container {
@@ -166,121 +108,61 @@
             return {
                 seededProducts: [
                     {
-                        title: "Yellow Shoes",
+                        title: "Assorted Coffee",
                         category: {
-                            name: "Men",
+                            name: "Groceries",
                         },
                         oldPrice: "$150.00",
                         curPrice: "$120.00",
                         rating: 3,
                         images: [
                             {
-                                url: "https://transvelo.github.io/electro-html/2.0/assets/img/212X200/img1.jpg",
+                                url: "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/coffee-asorted-600x600.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Dark Blue Jeans",
+                        title: "Assorted Coffee",
                         category: {
-                            name: "Men",
+                            name: "Groceries",
                         },
                         curPrice: "$150.00",
                         rating: 2,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-m-jeans1-768x768.jpg",
+                                url: "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/edible-oil-600x600.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Blue Denim Jeans",
+                        title: "Assorted Coffee",
                         category: {
-                            name: "Men",
+                            name: "Groceries",
                         },
                         curPrice: "$150.00",
                         rating: 3,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans2-768x768.jpg",
+                                url: "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/red-chillies-600x600.jpg",
                             },
                         ],
 
                         link: "#",
                     },
                     {
-                        title: "Blue Denim Short",
+                        title: "Assorted Coffee",
                         category: {
-                            name: "Men",
+                            name: "Groceries",
                         },
                         curPrice: "$130.00",
                         rating: 4,
                         images: [
                             {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-w-jeans1-768x768.jpg",
-                            },
-                        ],
-
-                        link: "#",
-                    },
-                    {
-                        title: "Anchor Bracelet",
-                        category: {
-                            name: "Men",
-                        },
-                        curPrice: "$120.00",
-                        rating: 5,
-                        images: [
-                            {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory2-768x768.jpg",
-                            },
-                        ],
-
-                        link: "#",
-                    },
-                    {
-                        title: "Boho Bangle Bracelet",
-                        category: {
-                            name: "Men",
-                        },
-                        curPrice: "$120.00",
-                        rating: 4,
-                        images: [
-                            {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-accessory1-768x768.jpg",
-                            },
-                        ],
-
-                        link: "#",
-                    },
-                    {
-                        title: "Yellow Shoes",
-                        category: {
-                            name: "Men",
-                        },
-                        curPrice: "$120.00",
-                        rating: 2,
-                        images: [
-                            {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag1-768x768.jpg",
-                            },
-                        ],
-
-                        link: "#",
-                    },
-                    {
-                        title: "Bright Red",
-                        category: {
-                            name: "Men",
-                        },
-                        curPrice: "$120.00",
-                        rating: 3,
-                        images: [
-                            {
-                                url: "https://websitedemos.net/brandstore-02/wp-content/uploads/sites/150/2017/12/product-bag3-768x768.jpg",
+                                url: "https://websitedemos.net/organic-shop-02/wp-content/uploads/sites/465/2018/06/sanitizer-600x600.jpg",
                             },
                         ],
 
